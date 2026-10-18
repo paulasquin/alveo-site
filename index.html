@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Showcase kit — pages projet en 3D</title>
-  <meta name="description" content="Un modèle pour raconter un projet avec des scènes 3D pilotées par le défilement, un journal bilingue et une vidéo verticale.">
+  <title>Alveo — la bonne PEEP, pixel par pixel</title>
+  <meta name="description" content="Alveo analyse les enregistrements de tomographie d’impédance électrique du Dräger PulmoVista 500 et calcule surdistension, collapsus et PEEP optimale d’un essai de PEEP décrémental (méthode de Costa, 2009).">
   <meta name="theme-color" content="#03050b">
   <!-- Replace with the site's address. -->
-  <link rel="alternate" hreflang="fr" href="https://example.paulasquin.com/?lang=fr">
-  <link rel="alternate" hreflang="en" href="https://example.paulasquin.com/?lang=en">
-  <link rel="alternate" hreflang="x-default" href="https://example.paulasquin.com/">
+  <link rel="alternate" hreflang="fr" href="https://alveo.aidiligence.eu/?lang=fr">
+  <link rel="alternate" hreflang="en" href="https://alveo.aidiligence.eu/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://alveo.aidiligence.eu/">
   <script>
     // Pick the language before first paint: ?lang=, then the visitor's saved choice, then the browser languages.
     (function () {
@@ -47,7 +47,7 @@
         <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="lg-track"/><circle cx="60" cy="60" r="52" class="lg-fill" id="loader-arc"/></svg>
         <div class="loader-readout"><span id="loader-num">100</span><small>%</small></div>
       </div>
-      <p class="loader-label" data-i18n="loader">Chargement de la scène…</p>
+      <p class="loader-label" data-i18n="loader">Chargement du poumon…</p>
     </div>
   </div>
 
@@ -57,136 +57,204 @@
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <nav class="topnav" aria-label="Navigation principale" data-i18n-aria="nav.aria">
-    <a href="#top" class="brand"><span class="brand-ion"></span><span data-i18n="brand">Showcase kit</span></a>
+    <a href="#top" class="brand"><span class="brand-ion"></span><span data-i18n="brand">Alveo</span></a>
     <div class="nav-links">
-      <a href="#histoire" data-i18n="nav.story">Histoire</a>
-      <a href="#modele" data-i18n="nav.model">Modèle</a>
-      <a href="#journal" data-i18n="nav.journal">Journal</a>
-      <a href="#resultats" data-i18n="nav.results">Résultats</a>
-      <a href="#kit" data-i18n="nav.kit">Kit</a>
+      <a href="#probleme" data-i18n="nav.problem">Le problème</a>
+      <a href="#mesure" data-i18n="nav.recon">L’image</a>
+      <a href="#methode" data-i18n="nav.method">La méthode</a>
+      <a href="#outil" data-i18n="nav.tool">L’outil</a>
+      <a href="#validation" data-i18n="nav.validation">Validation</a>
+      <a href="#acces" data-i18n="nav.access">Accès</a>
     </div>
     <div class="lang-switch" role="group" aria-label="Langue / Language"><button data-lang="fr" lang="fr">FR</button><button data-lang="en" lang="en">EN</button></div>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </nav>
 
   <main>
-    <!-- ACT · intro (js/acts/intro.js). One .panel per step; the act's progress is the scroll through this section. -->
-    <section id="top" class="act" data-act="intro">
+    <!-- ACT · lung (js/acts/lung.js): hero, belt, slice. -->
+    <section id="top" class="act" data-act="lung">
       <div class="panel panel-hero">
         <div class="hero-content">
-          <p class="eyebrow"><span class="pulse-dot"></span><span data-i18n="hero.eyebrow">Modèle · 3D pilotée par le défilement</span></p>
+          <p class="eyebrow"><span class="pulse-dot"></span><span data-i18n="hero.eyebrow">Tomographie d’impédance électrique · Réanimation</span></p>
           <h1 class="hero-title" data-i18n-title>
-            <span class="ht-line"><span class="ht-word" data-i18n="hero.t1">Projet</span></span>
-            <span class="ht-line"><span class="ht-word ht-glow" data-i18n="hero.t2">vitrine</span></span>
+            <span class="ht-line"><span class="ht-word" data-i18n="hero.t1">La bonne PEEP,</span></span>
+            <span class="ht-line"><span class="ht-word ht-glow" data-i18n="hero.t2">pixel par pixel.</span></span>
           </h1>
-          <p class="hero-sub" data-i18n="hero.sub">Raconter un projet avec des scènes 3D qui suivent le défilement, un journal bilingue et des données réelles.</p>
+          <p class="hero-sub" data-i18n="hero.sub">Alveo lit les enregistrements bruts du Dräger PulmoVista 500, reconstruit les images et calcule la surdistension, le collapsus et la PEEP optimale d’un essai de PEEP décrémental, selon la méthode de Costa (2009).</p>
           <dl class="hero-kpis">
-            <div><dt data-i18n="hero.k1">actes</dt><dd><span data-count="2">2</span></dd></div>
-            <div><dt data-i18n="hero.k2">langues</dt><dd><span data-count="2">2</span></dd></div>
-            <div><dt data-i18n="hero.k3">images par seconde</dt><dd><span data-count="60">60</span></dd></div>
+            <div><dt data-i18n="hero.k1">mesures par image</dt><dd><span data-count="208">208</span></dd></div>
+            <div><dt data-i18n="hero.k2">images par seconde</dt><dd><span data-count="50">50</span></dd></div>
+            <div><dt data-i18n="hero.k3">PEEP optimale par pixel</dt><dd><span data-count="1">1</span></dd></div>
           </dl>
           <div class="hero-cta">
-            <a href="#histoire" class="btn btn-primary" data-i18n="hero.cta1">Lire l'histoire</a>
-            <a href="#modele" class="btn btn-ghost" data-i18n="hero.cta2">Voir le modèle</a>
+            <a href="#probleme" class="btn btn-primary" data-i18n="hero.cta1">Comprendre la méthode</a>
+            <a href="#acces" class="btn btn-ghost" data-i18n="hero.cta2">Demander un accès</a>
           </div>
         </div>
         <div class="scroll-cue" aria-hidden="true"><span></span><i data-i18n="hero.scroll">Défiler</i></div>
       </div>
       <div class="panel panel-right">
         <div class="card">
-          <p class="kicker" data-i18n="i1.k">Acte · 01</p>
-          <h2 data-i18n="i1.h">Chaque acte est une scène 3D.</h2>
-          <p data-i18n="i1.p">Sa section de la page est une piste : la parcourir fait avancer la caméra, les effets et les étiquettes de 0 à 1.</p>
+          <p class="kicker" data-i18n="l1.k">La mesure · 01</p>
+          <h2 data-i18n="l1.h">Une ceinture de 16 électrodes</h2>
+          <p data-i18n="l1.p">Un faible courant alternatif passe entre deux électrodes voisines pendant que les autres paires voisines mesurent les tensions ; la paire qui injecte fait le tour du thorax. Seize injections, treize tensions chacune : 208 mesures par image, cinquante images par seconde.</p>
         </div>
       </div>
       <div class="panel panel-left">
         <div class="card">
-          <p class="kicker" data-i18n="i2.k">Acte · 02</p>
-          <h2 data-i18n="i2.h">Les cartes se posent par-dessus.</h2>
-          <p data-i18n="i2.p">Chaque panneau porte une carte qui apparaît, reste puis s'efface, pendant que la scène cadre son sujet du côté opposé.</p>
+          <p class="kicker" data-i18n="l2.k">La mesure · 02</p>
+          <h2 data-i18n="l2.h">Une coupe qui respire</h2>
+          <p data-i18n="l2.p">L’air conduit mal le courant : quand une région se remplit, son impédance augmente. Entre la fin d’expiration et la fin d’inspiration, l’image tidale montre où va chaque respiration, dans le plan de la ceinture.</p>
         </div>
       </div>
     </section>
 
-    <!-- Plain section: the stage fades out and stops rendering. -->
-    <section id="histoire" class="section section-projet">
+    <section id="probleme" class="section section-projet">
       <div class="wrap">
         <div class="split">
           <div>
-            <p class="kicker" data-i18n="story.k">L'histoire</p>
-            <h2 class="h-xl" data-i18n="story.h">Des sections simples<br><em>entre les actes.</em></h2>
+            <p class="kicker" data-i18n="pb.k">Le problème</p>
+            <h2 class="h-xl" data-i18n="pb.h">Trop de PEEP distend,<br><em>trop peu laisse collaber.</em></h2>
           </div>
           <div>
-            <p class="lead" data-i18n="story.lead">Entre deux actes, des sections ordinaires prennent le relais : texte, frise, bandeau de photos. La scène 3D s'efface et cesse de calculer.</p>
-            <p data-i18n="story.p">Tout ce qui suit est rendu depuis content.js et content.en.js.</p>
+            <p class="lead" data-i18n="pb.lead">Chez le patient ventilé, la pression positive de fin d’expiration (PEEP) garde les alvéoles ouvertes. Trop haute, elle distend les régions déjà ouvertes, souvent ventrales ; trop basse, elle laisse les régions dorsales se fermer à chaque expiration.</p>
+            <p data-i18n="pb.p1">L’essai de PEEP décrémental suivi par tomographie d’impédance électrique mesure les deux phénomènes région par région (Costa et al., 2009). Le calcul passe souvent par l’export de chaque palier depuis le logiciel du moniteur, puis par un tableur.</p>
+            <p data-i18n="pb.p2">Alveo fait le chemin d’un bout à l’autre : des fichiers bruts du moniteur jusqu’au rapport de la visite.</p>
           </div>
         </div>
-        <ol class="timeline" id="timeline"></ol>
       </div>
     </section>
 
-    <!-- ACT · model (js/acts/model.js), 3 panels. -->
-    <section id="modele" class="act" data-act="model">
+    <!-- ACT · recon (js/acts/recon.js), 3 panels. -->
+    <section id="mesure" class="act" data-act="recon">
       <div class="panel panel-left">
         <div class="card">
-          <p class="kicker" data-i18n="m1.k">Le modèle · 01</p>
-          <h2 data-i18n="m1.h">Imprimé couche par couche</h2>
-          <p data-i18n="m1.p">Un GLB chargé depuis assets/models, révélé par layerReveal() de kit/fx.js.</p>
-          <div class="meter" aria-hidden="true"><span data-i18n="m1.layer">couche</span><b id="layer">0</b><span>/ 400</span></div>
+          <p class="kicker" data-i18n="r1.k">L’image · 01</p>
+          <h2 data-i18n="r1.h">208 mesures, 1 024 pixels</h2>
+          <p data-i18n="r1.p">Un modèle du thorax en éléments finis (EIDORS) transforme chaque jeu de 208 tensions en image. Alveo lit directement le fichier .eit du moniteur, trame par trame, sans passer par un export.</p>
         </div>
       </div>
       <div class="panel panel-right">
         <div class="card">
-          <p class="kicker" data-i18n="m2.k">Le modèle · 02</p>
-          <h2 data-i18n="m2.h">Des étiquettes sur la pièce</h2>
-          <p data-i18n="m2.p">Des étiquettes HTML ancrées à des points du maillage, maintenues à l'écran et masquées derrière la caméra.</p>
+          <p class="kicker" data-i18n="r2.k">L’image · 02</p>
+          <h2 data-i18n="r2.h">L’image tidale</h2>
+          <p data-i18n="r2.p">Fin d’inspiration moins fin d’expiration, moyennée sur les cycles retenus : la part de chaque pixel dans le volume courant. Elle s’affiche dans la vue radiologique du moniteur, le ventral en haut et la droite du patient à gauche.</p>
         </div>
       </div>
       <div class="panel panel-left panel-sticky">
         <div class="card">
-          <p class="kicker" data-i18n="m3.k">Le modèle · 03</p>
-          <h2 data-i18n="m3.h">Plateau tournant</h2>
-          <p data-i18n="m3.p">La caméra cadre le sujet à l'opposé de la carte ; en portrait, elle le remonte au-dessus des cartes.</p>
+          <p class="kicker" data-i18n="r3.k">L’image · 03</p>
+          <h2 data-i18n="r3.h">Les mesures peu fiables sont écartées</h2>
+          <p data-i18n="r3.p">En face de la paire qui injecte, certaines tensions de référence sont presque nulles. Diviser par ces valeurs ferait apparaître des bandes sur l’image. Alveo écarte ces mesures : ses images se rapprochent alors de celles du logiciel Dräger.</p>
+          <div class="meter" aria-hidden="true"><span data-i18n="r3.kept">mesures retenues</span><b id="kept">208</b><span>/ 208</span></div>
         </div>
       </div>
     </section>
 
-    <section id="journal" class="section section-journal">
+    <!-- ACT · trial (js/acts/trial.js), 3 panels. -->
+    <section id="essai" class="act" data-act="trial">
+      <div class="panel panel-right">
+        <div class="card">
+          <p class="kicker" data-i18n="t1.k">L’essai de PEEP · 01</p>
+          <h2 data-i18n="t1.h">De 20 à 14 : la surdistension recule</h2>
+          <p data-i18n="t1.p">À PEEP haute, les régions ventrales sont surdistendues : leur compliance est en dessous de leur meilleure valeur. À chaque palier, Alveo compare chaque pixel à lui-même. La compliance perdue au-dessus de sa meilleure PEEP compte comme surdistension.</p>
+          <div class="readout" aria-live="off"><span>PEEP <b class="ro-peep">20</b> cmH₂O</span><span class="ro-od"><i></i><span data-i18n="ro.od">surdistension</span> <b class="ro-odv">0</b> %</span><span class="ro-lc"><i></i><span data-i18n="ro.lc">collapsus</span> <b class="ro-lcv">0</b> %</span></div>
+        </div>
+      </div>
+      <div class="panel panel-left">
+        <div class="card">
+          <p class="kicker" data-i18n="t2.k">L’essai de PEEP · 02</p>
+          <h2 data-i18n="t2.h">De 14 à 5 : le collapsus gagne</h2>
+          <p data-i18n="t2.p">Sous leur pression de fermeture, les régions dorsales se ferment. La compliance qu’elles perdent sous leur meilleure PEEP compte comme collapsus.</p>
+          <div class="readout" aria-live="off"><span>PEEP <b class="ro-peep">14</b> cmH₂O</span><span class="ro-od"><i></i><span data-i18n="ro.od">surdistension</span> <b class="ro-odv">0</b> %</span><span class="ro-lc"><i></i><span data-i18n="ro.lc">collapsus</span> <b class="ro-lcv">0</b> %</span></div>
+        </div>
+      </div>
+      <div class="panel panel-right panel-sticky">
+        <div class="card">
+          <p class="kicker" data-i18n="t3.k">L’essai de PEEP · 03</p>
+          <h2 data-i18n="t3.h">Au croisement, la PEEP optimale</h2>
+          <p data-i18n="t3.p">La PEEP optimale est celle où les deux courbes se croisent, par interpolation linéaire entre deux paliers. Sur le poumon simulé de cette page :</p>
+          <p class="best-line"><b class="sim-best">13,2</b> cmH₂O · <span data-i18n="t3.both">surdistension = collapsus =</span> <b class="sim-value">6,6</b> %</p>
+          <div class="readout" aria-live="off"><span>PEEP <b class="ro-peep">13</b> cmH₂O</span><span class="ro-od"><i></i><span data-i18n="ro.od">surdistension</span> <b class="ro-odv">0</b> %</span><span class="ro-lc"><i></i><span data-i18n="ro.lc">collapsus</span> <b class="ro-lcv">0</b> %</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="methode" class="section section-journal">
       <div class="wrap">
         <div class="section-head">
-          <p class="kicker" data-i18n="jn.k">Journal</p>
-          <h2 class="h-xl" data-i18n="jn.h">Des entrées avec<br><em>des visualisations vivantes.</em></h2>
-          <p class="lead" data-i18n="jn.lead">Les courbes et les visualiseurs 3D ne sont construits qu'à leur arrivée à l'écran.</p>
+          <p class="kicker" data-i18n="jn.k">La méthode</p>
+          <h2 class="h-xl" data-i18n="jn.h">Trois courbes<br><em>pour une PEEP.</em></h2>
+          <p class="lead" data-i18n="jn.lead">Les courbes ci-dessous sont tracées sur un poumon simulé ; la surdistension, le collapsus et la PEEP optimale y sont calculés par Alveo lui-même.</p>
         </div>
         <div class="journal" id="journal-list"></div>
       </div>
     </section>
 
-    <section id="resultats" class="section section-results">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker" data-i18n="res.k">Résultats</p>
-          <h2 class="h-xl" data-i18n="res.h">Des chiffres<br><em>qui défilent.</em></h2>
-          <p class="lead" data-i18n="res.lead">Grille de chiffres et comparaison en barres, linéaire ou logarithmique.</p>
+    <!-- ACT · map (js/acts/map.js), 2 panels. -->
+    <section id="carte" class="act" data-act="map">
+      <div class="panel panel-left">
+        <div class="card">
+          <p class="kicker" data-i18n="m1.k">La carte · 01</p>
+          <h2 data-i18n="m1.h">Une PEEP optimale par pixel</h2>
+          <p data-i18n="m1.p">Chaque colonne monte jusqu’à la PEEP où son pixel atteint sa meilleure compliance. Le gradient ventro-dorsal apparaît d’un coup d’œil : PEEP basse en ventral, haute en dorsal.</p>
+          <div class="legend" id="map-legend" aria-hidden="true"></div>
         </div>
-        <div class="results" id="stats"></div>
-        <div class="split split-top"><div></div><div id="bars"></div></div>
+      </div>
+      <div class="panel panel-right panel-sticky">
+        <div class="card">
+          <p class="kicker" data-i18n="m2.k">La carte · 02</p>
+          <h2 data-i18n="m2.h">Seul le poumon compte</h2>
+          <p data-i18n="m2.p">Le masque pulmonaire ne garde que les pixels qui dépassent 10 % de la variation d’impédance maximale au palier de PEEP le plus haut : ce qui ne ventile pas à ce palier n’est pas compté comme du poumon.</p>
+        </div>
       </div>
     </section>
 
-    <section id="kit" class="section section-tiles">
+    <section id="outil" class="section section-projet">
       <div class="wrap">
         <div class="section-head">
-          <p class="kicker" data-i18n="kit.k">Sous le capot</p>
-          <h2 class="h-xl" data-i18n="kit.h">Quatre briques<br><em>réutilisables.</em></h2>
+          <p class="kicker" data-i18n="tool.k">L’outil</p>
+          <h2 class="h-xl" data-i18n="tool.h">De l’enregistrement<br><em>au rapport de visite.</em></h2>
+          <p class="lead" data-i18n="tool.lead">Six onglets, dans l’ordre de l’analyse. Tout se fait depuis le navigateur.</p>
         </div>
+        <ol class="timeline" id="timeline"></ol>
         <div class="tiles" id="tiles"></div>
       </div>
     </section>
-  </main>
 
+    <section id="validation" class="section section-results">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker" data-i18n="val.k">Validation</p>
+          <h2 class="h-xl" data-i18n="val.h">Vérifié contre<br><em>les références.</em></h2>
+          <p class="lead" data-i18n="val.lead">Les calculs d’Alveo sont comparés au pipeline de référence d’une équipe clinique, et ses images à celles du logiciel Dräger, sur des enregistrements cliniques anonymisés.</p>
+        </div>
+        <div class="results" id="stats"></div>
+      </div>
+    </section>
+
+    <section id="acces" class="section section-access">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="kicker" data-i18n="acc.k">Accès</p>
+            <h2 class="h-xl" data-i18n="acc.h">Tester Alveo<br><em>sur vos essais de PEEP.</em></h2>
+          </div>
+          <div>
+            <p class="lead" data-i18n="acc.lead">Alveo est un outil de recherche développé par Guardia. L’accès est ouvert sur demande aux équipes qui travaillent avec un PulmoVista 500.</p>
+            <p><a class="btn btn-primary" href="mailto:contact@aidiligence.eu?subject=Alveo" data-i18n="acc.cta">Demander un accès</a></p>
+            <p class="disclaimer" data-i18n="acc.disclaimer">Outil de recherche, sans marquage CE : il ne remplace ni le jugement clinique ni les logiciels certifiés. Les images et les courbes de cette page sont simulées ; elles ne proviennent d’aucun patient.</p>
+            <ol class="refs">
+              <li>Costa ELV, Borges JB, Melo A, Suarez-Sipmann F, Toufen C Jr, Bohm SH, Amato MBP. <a href="https://doi.org/10.1007/s00134-009-1447-y" target="_blank" rel="noopener">Bedside estimation of recruitable alveolar collapse and hyperdistension by electrical impedance tomography.</a> Intensive Care Med. 2009;35(6):1132–1137.</li>
+              <li>Adler A, Lionheart WRB. <a href="https://doi.org/10.1088/0967-3334/27/5/S03" target="_blank" rel="noopener">Uses and abuses of EIDORS: an extensible software base for EIT.</a> Physiol Meas. 2006;27(5):S25–S42.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
   <footer class="footer">
-    <div class="wrap footer-inner"><p><span class="brand-ion"></span><span data-i18n="foot.1">Showcase kit · Paul Asquin</span></p></div>
+    <div class="wrap footer-inner"><p><span class="brand-ion"></span><span data-i18n="foot.1">Alveo · Guardia SAS</span></p><p><a href="https://aidiligence.eu/legal/" data-i18n="foot.legal">Mentions légales</a> · <a href="mailto:contact@aidiligence.eu">contact@aidiligence.eu</a></p></div>
   </footer>
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie" data-i18n-aria="lb.aria" hidden>

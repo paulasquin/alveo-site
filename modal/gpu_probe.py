@@ -44,7 +44,7 @@ def probe(url: str, flag_set: str = "", shots: bool = False):
                 await pg.wait_for_function("document.getElementById('loader').classList.contains('done')", timeout=120000)
                 await pg.wait_for_timeout(3000)
                 fps = {}
-                for sel, frac in [("#top", 0.0), ("#top", 0.5), ("#modele", 0.15), ("#modele", 0.6), ("#modele", 0.95)]:  # adapt per site
+                for sel, frac in [("#top", 0.0), ("#top", 0.85), ("#mesure", 0.6), ("#essai", 0.5), ("#essai", 0.9), ("#carte", 0.5)]:
                     y = await pg.evaluate(f"(()=>{{const e=document.querySelector('{sel}');const r=e.getBoundingClientRect();return r.top+scrollY+{frac}*(r.height-innerHeight);}})()")
                     await pg.evaluate(f"window.scrollTo(0,{y})")
                     await pg.wait_for_timeout(2500)
@@ -66,7 +66,7 @@ def probe(url: str, flag_set: str = "", shots: bool = False):
     return out, files
 
 @app.local_entrypoint()
-def main(url: str = "https://example.paulasquin.com/", flag_set: str = "", shots: bool = False):
+def main(url: str = "https://alveo.aidiligence.eu/", flag_set: str = "", shots: bool = False):
     import json, pathlib
     out, files = probe.remote(url, flag_set, shots)
     print(json.dumps(out, indent=1, ensure_ascii=False))
