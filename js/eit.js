@@ -68,7 +68,7 @@ export const peepAt = (x) => {
  * the feet, as the monitor shows it, the patient's right lung is on the screen's left.
  * Each point carries its depth (0 ventral, 1 dorsal) and a ventilation weight.
  */
-export function createLung({ count = 26000, size = 3.8 } = {}) {
+export function createLung({ count = 26000, size = 7.5 } = {}) {
   count = Math.round(count * Math.max(0.35, QUALITY.particles));
   const pos = new Float32Array(count * 3), aux = new Float32Array(count * 3);
   // Viewed from the feet (camera on -Z), screen right is -X: the patient's right lung sits at +X.
