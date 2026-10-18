@@ -79,4 +79,5 @@ video/                the vertical video pipeline
 - **Mobile URL bar** resizes the viewport while scrolling: the stage ignores height changes under 150 px and ScrollTrigger runs with `ignoreMobileResize`.
 - **Bloom washes the frame white** when large areas are far above 1 in HDR (a big sun disc, water glints × 60): keep HDR peaks small, threshold ≥ 1. Check a frame with `shot3d.py … --eval="a.look.bloom = 0"` to see the base image.
 - **Face winding of procedural meshes**: build ground grids facing +Y; a mirrored copy (scale.y = −1) flips the winding and can hide the bug.
+- **Point sprites look bigger in software rendering**: on SwiftShader the stage drops its internal resolution, so `gl_PointSize` pixels are upscaled and particle clouds read dense; on a real GPU at full resolution the same points are half the size and the cloud turns faint. Size particles on a GPU capture (`modal/gpu_probe.py`), and scale them with the viewport (`min(w, h) / 900`) so a phone does not get an additive white blob.
 - **Fonts for ffmpeg/libass**: variable fonts are not matched by style; `video/make_fonts.py` writes static instances with unique family names.
