@@ -3,7 +3,7 @@ import { registerStrings, applyStatic, nf, t } from './kit/i18n.js';
 import { STRINGS } from './strings.js';
 import {
   $, $$, capture, debug, setupAnchors, webglOK, setupStage, bindActs, setupPanels, setupReveals,
-  setupNav, setupLightbox, loaderProgress, finishBoot,
+  setupNav, setupLightbox, finishBoot,
 } from './kit/page.js';
 import { renderTimeline, renderJournal, renderStats, renderTiles } from './kit/render.js';
 import { TIMELINE, ENTRIES, STATS, TILES, CHARTS } from './content.js';
@@ -38,7 +38,8 @@ async function boot() {
   setupLightbox();
   setupNav();
 
-  const onProgress = loaderProgress({ from: 0, to: 100 });
+  // The loader is a lung forming from particles (js/loader.js): no gauge, no number.
+  const onProgress = (f) => window.__lungLoader?.set(f);
   let bundle = null;
   if (webglOK()) {
     try {
@@ -65,7 +66,10 @@ async function boot() {
   setupReveals();
   if (bundle) bindActs(bundle);
   if (debug || capture) window.__kit = bundle;
+  // Let the lung finish forming before the page shows (at most 2.5 s).
+  await Promise.race([window.__lungLoader?.formed, new Promise((r) => setTimeout(r, 2500))]);
   await finishBoot();
+  window.__lungLoader?.stop();
 }
 
 boot();
