@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alveo — la bonne PEEP, pixel par pixel</title>
-  <meta name="description" content="Alveo analyse les enregistrements de tomographie d’impédance électrique du Dräger PulmoVista 500 et calcule surdistension, collapsus et PEEP optimale d’un essai de PEEP décrémental (méthode de Costa, 2009).">
+  <title>Alveo — titrer la PEEP avec la tomographie par impédance électrique</title>
+  <meta name="description" content="Alveo analyse les enregistrements de tomographie par impédance électrique du Dräger PulmoVista 500 et calcule surdistension, collapsus et PEEP optimale d’un essai de PEEP décrémental (méthode de Costa, 2009).">
   <meta name="theme-color" content="#03050b">
   <!-- Replace with the site's address. -->
   <link rel="alternate" hreflang="fr" href="https://alveo.aidiligence.eu/?lang=fr">
@@ -54,7 +54,7 @@
   <nav class="topnav" aria-label="Navigation principale" data-i18n-aria="nav.aria">
     <a href="#top" class="brand"><span class="brand-ion"></span><span data-i18n="brand">Alveo</span></a>
     <div class="nav-links">
-      <a href="#probleme" data-i18n="nav.problem">Le problème</a>
+      <a href="#probleme" data-i18n="nav.problem">Le contexte</a>
       <a href="#mesure" data-i18n="nav.recon">L’image</a>
       <a href="#methode" data-i18n="nav.method">La méthode</a>
       <a href="#outil" data-i18n="nav.tool">L’outil</a>
@@ -70,19 +70,19 @@
     <section id="top" class="act" data-act="lung">
       <div class="panel panel-hero">
         <div class="hero-content">
-          <p class="eyebrow"><span class="pulse-dot"></span><span data-i18n="hero.eyebrow">Tomographie d’impédance électrique · Réanimation</span></p>
+          <p class="eyebrow"><span class="pulse-dot"></span><span data-i18n="hero.eyebrow">Tomographie par impédance électrique · Réanimation</span></p>
           <h1 class="hero-title" data-i18n-title>
-            <span class="ht-line"><span class="ht-word" data-i18n="hero.t1">La bonne PEEP,</span></span>
-            <span class="ht-line"><span class="ht-word ht-glow" data-i18n="hero.t2">pixel par pixel.</span></span>
+            <span class="ht-line"><span class="ht-word" data-i18n="hero.t1">Titrer la PEEP</span></span>
+            <span class="ht-line"><span class="ht-word ht-glow" data-i18n="hero.t2">avec la TIE.</span></span>
           </h1>
-          <p class="hero-sub" data-i18n="hero.sub">Alveo lit les enregistrements bruts du Dräger PulmoVista 500, reconstruit les images et calcule la surdistension, le collapsus et la PEEP optimale d’un essai de PEEP décrémental, selon la méthode de Costa (2009).</p>
+          <p class="hero-sub" data-i18n="hero.sub">Alveo analyse les enregistrements du Dräger PulmoVista 500 et calcule, pour un essai de PEEP décrémental, la surdistension, le collapsus et la PEEP optimale, selon la méthode de Costa et al. (2009).</p>
           <dl class="hero-kpis">
-            <div><dt data-i18n="hero.k1">mesures par image</dt><dd><span data-count="208">208</span></dd></div>
-            <div><dt data-i18n="hero.k2">images par seconde</dt><dd><span data-count="50">50</span></dd></div>
-            <div><dt data-i18n="hero.k3">PEEP optimale par pixel</dt><dd><span data-count="1">1</span></dd></div>
+            <div><dt data-i18n="hero.k1">électrodes</dt><dd><span data-count="16">16</span></dd></div>
+            <div><dt data-i18n="hero.k2">mesures par image</dt><dd><span data-count="208">208</span></dd></div>
+            <div><dt data-i18n="hero.k3">images par seconde</dt><dd><span data-count="50">50</span></dd></div>
           </dl>
           <div class="hero-cta">
-            <a href="#probleme" class="btn btn-primary" data-i18n="hero.cta1">Comprendre la méthode</a>
+            <a href="#probleme" class="btn btn-primary" data-i18n="hero.cta1">Voir la méthode</a>
             <a href="#acces" class="btn btn-ghost" data-i18n="hero.cta2">Demander un accès</a>
           </div>
         </div>
@@ -91,15 +91,15 @@
       <div class="panel panel-right">
         <div class="card">
           <p class="kicker" data-i18n="l1.k">La mesure · 01</p>
-          <h2 data-i18n="l1.h">Une ceinture de 16 électrodes</h2>
-          <p data-i18n="l1.p">Un faible courant alternatif passe entre deux électrodes voisines pendant que les autres paires voisines mesurent les tensions ; la paire qui injecte fait le tour du thorax. Seize injections, treize tensions chacune : 208 mesures par image, cinquante images par seconde.</p>
+          <h2 data-i18n="l1.h">Seize électrodes autour du thorax</h2>
+          <p data-i18n="l1.p">La ceinture injecte un faible courant alternatif entre deux électrodes voisines et mesure les tensions entre les autres paires. L’injection fait le tour des seize électrodes : chaque image repose sur 208 mesures, à raison de cinquante images par seconde.</p>
         </div>
       </div>
       <div class="panel panel-left">
         <div class="card">
           <p class="kicker" data-i18n="l2.k">La mesure · 02</p>
-          <h2 data-i18n="l2.h">Une coupe qui respire</h2>
-          <p data-i18n="l2.p">L’air conduit mal le courant : quand une région se remplit, son impédance augmente. Entre la fin d’expiration et la fin d’inspiration, l’image tidale montre où va chaque respiration, dans le plan de la ceinture.</p>
+          <h2 data-i18n="l2.h">Une image en coupe du thorax</h2>
+          <p data-i18n="l2.p">L’air conduit mal le courant : l’impédance d’une région augmente quand elle se remplit. La différence entre fin d’inspiration et fin d’expiration donne l’image tidale, c’est-à-dire la répartition de la ventilation dans le plan de la ceinture.</p>
         </div>
       </div>
     </section>
@@ -108,13 +108,13 @@
       <div class="wrap">
         <div class="split">
           <div>
-            <p class="kicker" data-i18n="pb.k">Le problème</p>
-            <h2 class="h-xl" data-i18n="pb.h">Trop de PEEP distend,<br><em>trop peu laisse collaber.</em></h2>
+            <p class="kicker" data-i18n="pb.k">Le contexte</p>
+            <h2 class="h-xl" data-i18n="pb.h">Choisir la PEEP,<br><em>un compromis régional.</em></h2>
           </div>
           <div>
-            <p class="lead" data-i18n="pb.lead">Chez le patient ventilé, la pression positive de fin d’expiration (PEEP) garde les alvéoles ouvertes. Trop haute, elle distend les régions déjà ouvertes, souvent ventrales ; trop basse, elle laisse les régions dorsales se fermer à chaque expiration.</p>
-            <p data-i18n="pb.p1">L’essai de PEEP décrémental suivi par tomographie d’impédance électrique mesure les deux phénomènes région par région (Costa et al., 2009). Le calcul passe souvent par l’export de chaque palier depuis le logiciel du moniteur, puis par un tableur.</p>
-            <p data-i18n="pb.p2">Alveo fait le chemin d’un bout à l’autre : des fichiers bruts du moniteur jusqu’au rapport de la visite.</p>
+            <p class="lead" data-i18n="pb.lead">Chez le patient ventilé, la pression expiratoire positive (PEEP) maintient les alvéoles ouvertes en fin d’expiration. Trop élevée, elle surdistend les régions déjà aérées, souvent ventrales ; trop basse, elle laisse les régions dorsales se collaber.</p>
+            <p data-i18n="pb.p1">Suivi par TIE, un essai de PEEP décrémental permet de quantifier ces deux phénomènes région par région (Costa et al., 2009). En pratique, chaque palier est souvent exporté depuis le logiciel du moniteur, puis analysé dans un tableur.</p>
+            <p data-i18n="pb.p2">Alveo réunit ces étapes, des fichiers bruts du moniteur jusqu’au rapport de visite.</p>
           </div>
         </div>
       </div>
@@ -125,22 +125,22 @@
       <div class="panel panel-left">
         <div class="card">
           <p class="kicker" data-i18n="r1.k">L’image · 01</p>
-          <h2 data-i18n="r1.h">208 mesures, 1 024 pixels</h2>
-          <p data-i18n="r1.p">Un modèle du thorax en éléments finis (EIDORS) transforme chaque jeu de 208 tensions en image. Alveo lit directement le fichier .eit du moniteur, trame par trame, sans passer par un export.</p>
+          <h2 data-i18n="r1.h">Des mesures à l’image</h2>
+          <p data-i18n="r1.p">Un modèle du thorax en éléments finis (EIDORS) convertit chaque série de 208 tensions en image. Alveo lit directement les fichiers .eit du moniteur, sans export intermédiaire.</p>
         </div>
       </div>
       <div class="panel panel-right">
         <div class="card">
           <p class="kicker" data-i18n="r2.k">L’image · 02</p>
           <h2 data-i18n="r2.h">L’image tidale</h2>
-          <p data-i18n="r2.p">Fin d’inspiration moins fin d’expiration, moyennée sur les cycles retenus : la part de chaque pixel dans le volume courant. Elle s’affiche dans la vue radiologique du moniteur, le ventral en haut et la droite du patient à gauche.</p>
+          <p data-i18n="r2.p">Elle correspond à la différence entre fin d’inspiration et fin d’expiration, moyennée sur les cycles retenus ; chaque pixel y représente sa part du volume courant. L’affichage suit la convention du moniteur : ventral en haut, droite du patient à gauche.</p>
         </div>
       </div>
       <div class="panel panel-left panel-sticky">
         <div class="card">
           <p class="kicker" data-i18n="r3.k">L’image · 03</p>
-          <h2 data-i18n="r3.h">Les mesures peu fiables sont écartées</h2>
-          <p data-i18n="r3.p">En face de la paire qui injecte, certaines tensions de référence sont presque nulles. Diviser par ces valeurs ferait apparaître des bandes sur l’image. Alveo écarte ces mesures : ses images se rapprochent alors de celles du logiciel Dräger.</p>
+          <h2 data-i18n="r3.h">Exclusion des mesures peu fiables</h2>
+          <p data-i18n="r3.p">En face de la paire d’injection, certaines tensions de référence sont proches de zéro ; rapportées à ces valeurs, les variations deviennent aberrantes et dessinent des bandes sur l’image. Alveo exclut ces mesures, et ses images concordent alors avec celles du logiciel Dräger.</p>
           <div class="meter" aria-hidden="true"><span data-i18n="r3.kept">mesures retenues</span><b id="kept">208</b><span>/ 208</span></div>
         </div>
       </div>
@@ -151,24 +151,24 @@
       <div class="panel panel-right">
         <div class="card">
           <p class="kicker" data-i18n="t1.k">L’essai de PEEP · 01</p>
-          <h2 data-i18n="t1.h">De 20 à 14 : la surdistension recule</h2>
-          <p data-i18n="t1.p">À PEEP haute, les régions ventrales sont surdistendues : leur compliance est en dessous de leur meilleure valeur. À chaque palier, Alveo compare chaque pixel à lui-même. La compliance perdue au-dessus de sa meilleure PEEP compte comme surdistension.</p>
+          <h2 data-i18n="t1.h">De 20 à 14 cmH₂O : la surdistension ventrale</h2>
+          <p data-i18n="t1.p">À PEEP élevée, la compliance des régions ventrales est inférieure à leur meilleure valeur. Alveo compare chaque pixel à lui-même d’un palier à l’autre : la compliance perdue au-dessus de sa meilleure PEEP est comptée comme surdistension.</p>
           <div class="readout" aria-live="off"><span>PEEP <b class="ro-peep">20</b> cmH₂O</span><span class="ro-od"><i></i><span data-i18n="ro.od">surdistension</span> <b class="ro-odv">0</b> %</span><span class="ro-lc"><i></i><span data-i18n="ro.lc">collapsus</span> <b class="ro-lcv">0</b> %</span></div>
         </div>
       </div>
       <div class="panel panel-left">
         <div class="card">
           <p class="kicker" data-i18n="t2.k">L’essai de PEEP · 02</p>
-          <h2 data-i18n="t2.h">De 14 à 5 : le collapsus gagne</h2>
-          <p data-i18n="t2.p">Sous leur pression de fermeture, les régions dorsales se ferment. La compliance qu’elles perdent sous leur meilleure PEEP compte comme collapsus.</p>
+          <h2 data-i18n="t2.h">De 14 à 5 cmH₂O : le collapsus dorsal</h2>
+          <p data-i18n="t2.p">Sous leur pression de fermeture, les régions dorsales se collabent. La compliance perdue en dessous de leur meilleure PEEP est comptée comme collapsus.</p>
           <div class="readout" aria-live="off"><span>PEEP <b class="ro-peep">14</b> cmH₂O</span><span class="ro-od"><i></i><span data-i18n="ro.od">surdistension</span> <b class="ro-odv">0</b> %</span><span class="ro-lc"><i></i><span data-i18n="ro.lc">collapsus</span> <b class="ro-lcv">0</b> %</span></div>
         </div>
       </div>
       <div class="panel panel-right panel-sticky">
         <div class="card">
           <p class="kicker" data-i18n="t3.k">L’essai de PEEP · 03</p>
-          <h2 data-i18n="t3.h">Au croisement, la PEEP optimale</h2>
-          <p data-i18n="t3.p">La PEEP optimale est celle où les deux courbes se croisent, par interpolation linéaire entre deux paliers. Sur le poumon simulé de cette page :</p>
+          <h2 data-i18n="t3.h">La PEEP optimale</h2>
+          <p data-i18n="t3.p">Elle se situe au croisement des courbes de surdistension et de collapsus, par interpolation linéaire entre deux paliers. Pour le poumon simulé de cette page :</p>
           <p class="best-line"><b class="sim-best">13,2</b> cmH₂O · <span data-i18n="t3.both">surdistension = collapsus =</span> <b class="sim-value">6,6</b> %</p>
           <div class="readout" aria-live="off"><span>PEEP <b class="ro-peep">13</b> cmH₂O</span><span class="ro-od"><i></i><span data-i18n="ro.od">surdistension</span> <b class="ro-odv">0</b> %</span><span class="ro-lc"><i></i><span data-i18n="ro.lc">collapsus</span> <b class="ro-lcv">0</b> %</span></div>
         </div>
@@ -179,8 +179,8 @@
       <div class="wrap">
         <div class="section-head">
           <p class="kicker" data-i18n="jn.k">La méthode</p>
-          <h2 class="h-xl" data-i18n="jn.h">Trois courbes<br><em>pour une PEEP.</em></h2>
-          <p class="lead" data-i18n="jn.lead">Les courbes ci-dessous sont tracées sur un poumon simulé ; la surdistension, le collapsus et la PEEP optimale y sont calculés par Alveo lui-même.</p>
+          <h2 class="h-xl" data-i18n="jn.h">De la courbe d’impédance<br><em>à la PEEP optimale.</em></h2>
+          <p class="lead" data-i18n="jn.lead">Les courbes ci-dessous portent sur un poumon simulé ; la surdistension, le collapsus et la PEEP optimale sont calculés par Alveo.</p>
         </div>
         <div class="journal" id="journal-list"></div>
       </div>
@@ -191,16 +191,16 @@
       <div class="panel panel-left">
         <div class="card">
           <p class="kicker" data-i18n="m1.k">La carte · 01</p>
-          <h2 data-i18n="m1.h">Une PEEP optimale par pixel</h2>
-          <p data-i18n="m1.p">Chaque colonne monte jusqu’à la PEEP où son pixel atteint sa meilleure compliance. Le gradient ventro-dorsal apparaît d’un coup d’œil : PEEP basse en ventral, haute en dorsal.</p>
+          <h2 data-i18n="m1.h">La PEEP optimale de chaque pixel</h2>
+          <p data-i18n="m1.p">La hauteur de chaque colonne indique la PEEP à laquelle le pixel atteint sa meilleure compliance. Le gradient ventro-dorsal apparaît nettement : PEEP basse en avant, plus élevée en arrière.</p>
           <div class="legend" id="map-legend" aria-hidden="true"></div>
         </div>
       </div>
       <div class="panel panel-right panel-sticky">
         <div class="card">
           <p class="kicker" data-i18n="m2.k">La carte · 02</p>
-          <h2 data-i18n="m2.h">Seul le poumon compte</h2>
-          <p data-i18n="m2.p">Le masque pulmonaire ne garde que les pixels qui dépassent 10 % de la variation d’impédance maximale au palier de PEEP le plus haut : ce qui ne ventile pas à ce palier n’est pas compté comme du poumon.</p>
+          <h2 data-i18n="m2.h">Le masque pulmonaire</h2>
+          <p data-i18n="m2.p">Seuls les pixels dont la variation d’impédance dépasse 10 % du maximum au palier de PEEP le plus élevé entrent dans le calcul ; les autres ne sont pas considérés comme du poumon.</p>
         </div>
       </div>
     </section>
@@ -210,7 +210,7 @@
         <div class="section-head">
           <p class="kicker" data-i18n="tool.k">L’outil</p>
           <h2 class="h-xl" data-i18n="tool.h">De l’enregistrement<br><em>au rapport de visite.</em></h2>
-          <p class="lead" data-i18n="tool.lead">Six onglets, dans l’ordre de l’analyse. Tout se fait depuis le navigateur.</p>
+          <p class="lead" data-i18n="tool.lead">L’application suit l’ordre de l’analyse, en six onglets, et s’utilise depuis un navigateur.</p>
         </div>
         <ol class="timeline" id="timeline"></ol>
         <div class="tiles" id="tiles"></div>
@@ -221,8 +221,8 @@
       <div class="wrap">
         <div class="section-head">
           <p class="kicker" data-i18n="val.k">Validation</p>
-          <h2 class="h-xl" data-i18n="val.h">Vérifié contre<br><em>les références.</em></h2>
-          <p class="lead" data-i18n="val.lead">Les calculs d’Alveo sont comparés au pipeline de référence d’une équipe clinique, et ses images à celles du logiciel Dräger, sur des enregistrements cliniques anonymisés.</p>
+          <h2 class="h-xl" data-i18n="val.h">Des résultats<br><em>comparés aux références.</em></h2>
+          <p class="lead" data-i18n="val.lead">Les calculs d’Alveo ont été comparés au pipeline de référence d’une équipe clinique, et ses images à celles du logiciel Dräger, sur des enregistrements cliniques anonymisés.</p>
         </div>
         <div class="results" id="stats"></div>
       </div>
@@ -233,12 +233,12 @@
         <div class="split">
           <div>
             <p class="kicker" data-i18n="acc.k">Accès</p>
-            <h2 class="h-xl" data-i18n="acc.h">Tester Alveo<br><em>sur vos essais de PEEP.</em></h2>
+            <h2 class="h-xl" data-i18n="acc.h">Utiliser Alveo<br><em>dans votre service.</em></h2>
           </div>
           <div>
-            <p class="lead" data-i18n="acc.lead">Alveo est un outil de recherche développé par Guardia. L’accès est ouvert sur demande aux équipes qui travaillent avec un PulmoVista 500.</p>
+            <p class="lead" data-i18n="acc.lead">Alveo est un outil de recherche développé par Guardia. L’accès est accordé sur demande aux équipes qui utilisent un PulmoVista 500.</p>
             <p><a class="btn btn-primary" href="mailto:contact@aidiligence.eu?subject=Alveo" data-i18n="acc.cta">Demander un accès</a></p>
-            <p class="disclaimer" data-i18n="acc.disclaimer">Outil de recherche, sans marquage CE : il ne remplace ni le jugement clinique ni les logiciels certifiés. Les images et les courbes de cette page sont simulées ; elles ne proviennent d’aucun patient.</p>
+            <p class="disclaimer" data-i18n="acc.disclaimer">Outil de recherche sans marquage CE : il ne se substitue ni au jugement clinique ni aux logiciels certifiés. Les images et les courbes de cette page sont simulées et ne proviennent d’aucun patient.</p>
             <ol class="refs">
               <li>Costa ELV, Borges JB, Melo A, Suarez-Sipmann F, Toufen C Jr, Bohm SH, Amato MBP. <a href="https://doi.org/10.1007/s00134-009-1447-y" target="_blank" rel="noopener">Bedside estimation of recruitable alveolar collapse and hyperdistension by electrical impedance tomography.</a> Intensive Care Med. 2009;35(6):1132–1137.</li>
               <li>Adler A, Lionheart WRB. <a href="https://doi.org/10.1088/0967-3334/27/5/S03" target="_blank" rel="noopener">Uses and abuses of EIDORS: an extensible software base for EIT.</a> Physiol Meas. 2006;27(5):S25–S42.</li>

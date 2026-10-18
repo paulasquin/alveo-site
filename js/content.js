@@ -5,63 +5,63 @@ import { TIMELINE_EN, ENTRIES_EN, STATS_EN, TILES_EN } from './content.en.js';
 import { SIM } from './data/sim.js';
 
 export const TIMELINE = [
-  { date: '1 · Données', title: 'Charger l’essai', text: 'Les fichiers .eit du moniteur, une quinzaine en une fois, envoyés en petits morceaux ; ou les exports .asc du PulmoVista 500, un par palier.' },
-  { date: '2 · Cycles', title: 'Choisir les respirations', text: 'L’impédance de tout l’essai, les enregistrements bout à bout, un zoom d’une minute ; un clic dans un cycle donne ses trois images.' },
-  { date: '3 · Paliers', title: 'Construire les paliers', text: 'Jusqu’à quinze cycles moyennés par palier, la PEEP et la Pplat lues dans le fichier, l’image de base, les identifiants du patient et de la visite.' },
+  { date: '1 · Données', title: 'Charger l’essai', text: 'Les fichiers .eit du moniteur, une quinzaine à la fois, envoyés par morceaux ; ou les exports .asc du PulmoVista 500, un par palier.' },
+  { date: '2 · Cycles', title: 'Sélectionner les cycles', text: 'La courbe d’impédance de l’essai entier, enregistrements à la suite, avec un zoom sur une minute ; un clic sur un cycle affiche ses trois images.' },
+  { date: '3 · Paliers', title: 'Constituer les paliers', text: 'Jusqu’à quinze cycles moyennés par palier, PEEP et Pplat lues dans le fichier, image de base, identifiants du patient et de la visite.' },
   { date: '4 · ODLC', title: 'Calculer', text: 'Surdistension et collapsus à chaque palier, modèle en compliance par défaut, PEEP optimale au croisement des courbes.' },
-  { date: '5 · Cartes', title: 'Lire les cartes', text: 'PEEP optimale par pixel, masque pulmonaire, surdistension et collapsus à n’importe quelle PEEP intermédiaire.' },
-  { date: '6 · Exports', title: 'Garder une trace', text: 'Un classeur par palier, un classeur de la visite (xlsx ou csv) et le rapport PDF, aussi affiché à l’écran.' },
+  { date: '5 · Cartes', title: 'Lire les cartes', text: 'PEEP optimale par pixel, masque pulmonaire, surdistension et collapsus à toute PEEP intermédiaire.' },
+  { date: '6 · Exports', title: 'Exporter', text: 'Un classeur par palier, un classeur de visite (xlsx ou csv) et le rapport PDF, également affiché à l’écran.' },
 ];
 
 export const ENTRIES = [
   {
     id: 'essai', num: '01', date: 'Données simulées', year: 'Cycles',
-    title: 'Voir tout l’essai avant de choisir',
-    question: 'Quelles respirations garder pour chaque palier ?',
+    title: 'L’essai dans son ensemble',
+    question: 'Quels cycles retenir pour chaque palier ?',
     body: [
-      'Les enregistrements sont mis bout à bout : la descente de PEEP se lit d’un coup d’œil, palier après palier, et l’impédance de fin d’expiration baisse avec elle.',
-      'Un clic dans la courbe amène le sélecteur sur ce cycle. Alveo y lit la PEEP et la pression de plateau transmises par le ventilateur et enregistrées dans le fichier.',
+      'Les enregistrements sont affichés à la suite : on suit la descente de PEEP palier par palier, et la baisse de l’impédance de fin d’expiration qui l’accompagne.',
+      'Un clic sur la courbe sélectionne le cycle correspondant ; Alveo y lit la PEEP et la pression de plateau transmises par le ventilateur.',
     ],
-    result: 'Six paliers de 40 secondes, de PEEP 20 à 5 cmH₂O.',
+    result: 'Six paliers de 40 secondes, de 20 à 5 cmH₂O.',
     viz: { type: 'chart', chart: 'wave' },
   },
   {
     id: 'pixels', num: '02', date: 'Données simulées', year: 'Compliance',
-    title: 'Chaque pixel a sa meilleure PEEP',
+    title: 'Une PEEP optimale propre à chaque pixel',
     question: 'Pourquoi raisonner pixel par pixel ?',
     body: [
-      'La compliance d’un pixel, c’est sa variation d’impédance divisée par la pression motrice. Quand la PEEP augmente, elle monte, passe par un maximum, puis redescend.',
-      'Un pixel ventral atteint son maximum à PEEP basse ; un pixel dorsal a besoin d’une PEEP plus haute pour rester ouvert. Aucune PEEP n’est la meilleure pour tous les pixels à la fois : il faut un compromis.',
+      'La compliance d’un pixel est sa variation d’impédance rapportée à la pression motrice. Lorsque la PEEP augmente, elle croît, atteint un maximum, puis diminue.',
+      'Un pixel ventral atteint son maximum à PEEP basse ; un pixel dorsal a besoin d’une PEEP plus élevée pour rester ouvert. Aucune PEEP n’est optimale pour tous les pixels à la fois : le choix est un compromis.',
     ],
-    result: 'Compliance de deux pixels, chacune rapportée à son maximum.',
+    result: 'Compliance de deux pixels, rapportée à leur maximum respectif.',
     viz: { type: 'chart', chart: 'pixels' },
   },
   {
     id: 'odlc', num: '03', date: 'Données simulées', year: 'ODLC',
-    title: 'Deux courbes qui se croisent',
-    question: 'Où placer le compromis ?',
+    title: 'Le croisement des courbes',
+    question: 'Où placer ce compromis ?',
     body: [
-      'À chaque palier, la compliance perdue par chaque pixel est sommée sur tout le poumon : elle compte en surdistension au-dessus de sa meilleure PEEP, en collapsus au-dessous.',
-      'La PEEP optimale est le croisement des deux courbes. Alveo calcule deux modèles : en compliance (avec la pression motrice), retenu par défaut, et en impédance seule.',
+      'À chaque palier, la compliance perdue par chaque pixel est additionnée sur l’ensemble du poumon : en surdistension au-dessus de sa meilleure PEEP, en collapsus en dessous.',
+      'La PEEP optimale est le point de croisement des deux courbes. Alveo propose deux modèles : en compliance, qui intègre la pression motrice et est retenu par défaut, et en impédance seule.',
     ],
-    result: () => `PEEP optimale ${nf(SIM.odlc.best, 1)} cmH₂O, surdistension = collapsus = ${nf(SIM.odlc.value, 1)} %.`,
+    result: () => `PEEP optimale ${nf(SIM.odlc.best, 1)} cmH₂O ; surdistension = collapsus = ${nf(SIM.odlc.value, 1)} %.`,
     viz: { type: 'chart', chart: 'odlc' },
   },
 ];
 
 export const STATS = [
-  { value: 4, decimals: 0, unit: 'visites', unitEn: 'visits', label: 'recalculées : mêmes résultats que le pipeline de référence de l’équipe clinique', note: 'écart < 10⁻¹⁴ sur chaque palier', accent: true },
-  { value: 0.92, decimals: 2, unit: 'r', label: 'corrélation des images avec le logiciel Dräger', note: 'r de 0,91 à 0,92 sur trois paliers d’un même essai de PEEP, chacun sur les mêmes 30 secondes que l’export Dräger' },
-  { value: 15, decimals: 0, unit: 'fichiers', unitEn: 'files', label: '.eit d’un essai complet chargés en une fois', note: 'envoyés par morceaux, même sur une connexion lente' },
+  { value: 4, decimals: 0, unit: 'visites', unitEn: 'visits', label: 'recalculées avec les mêmes résultats que le pipeline de référence d’une équipe clinique', note: 'écart inférieur à 10⁻¹⁴ à chaque palier', accent: true },
+  { value: 0.92, decimals: 2, unit: 'r', label: 'corrélation entre les images d’Alveo et celles du logiciel Dräger', note: 'de 0,91 à 0,92 sur trois paliers d’un essai, sur les mêmes 30 secondes que l’export Dräger' },
+  { value: 15, decimals: 0, unit: 'fichiers', unitEn: 'files', label: '.eit d’un essai complet chargés en une seule fois', note: 'envoyés par morceaux, y compris sur une connexion lente' },
 ];
 
 export const TILES = [
-  { year: 'Fichiers', name: 'Dräger PulmoVista 500', tag: '.eit · .asc', text: 'Les enregistrements bruts .eit, lus trame par trame, ou les exports .asc du logiciel du moniteur.' },
-  { year: 'Ventilateur', name: 'PEEP et Pplat lues', tag: 'machine recorded', text: 'Les pressions transmises par le ventilateur et enregistrées dans le .eit remplissent les paliers ; une saisie manuelle reste prioritaire.' },
-  { year: 'Calcul', name: 'Deux modèles', tag: 'ODLC · C et Z', text: 'Le modèle en compliance (avec la pression motrice) par défaut ; le modèle en impédance seule quand la Pplat manque.' },
-  { year: 'Protocole', name: 'Image de base', tag: 'base image', text: 'L’enregistrement fait avant la descente de PEEP est traité avec l’essai ; le rapport montre la courbe de surdistension et de collapsus avec et sans lui.' },
-  { year: 'Visite', name: 'Rapport et classeurs', tag: 'pdf · xlsx · csv', text: 'Rapport PDF de la visite, classeur par palier et classeur de la visite, avec les paramètres de reconstruction.' },
-  { year: 'Interface', name: 'Français et anglais', tag: 'FR · EN', text: 'L’interface s’ouvre en anglais et passe en français d’un clic, pour toute la session.' },
+  { year: 'Fichiers', name: 'Dräger PulmoVista 500', tag: '.eit · .asc', text: 'Enregistrements .eit lus trame par trame, ou exports .asc du logiciel du moniteur.' },
+  { year: 'Ventilateur', name: 'PEEP et Pplat du ventilateur', tag: 'machine recorded', text: 'Les pressions enregistrées dans le fichier .eit renseignent les paliers ; une valeur saisie manuellement reste prioritaire.' },
+  { year: 'Calcul', name: 'Deux modèles', tag: 'ODLC · C et Z', text: 'Le modèle en compliance, qui intègre la pression motrice, par défaut ; le modèle en impédance seule lorsque la Pplat manque.' },
+  { year: 'Protocole', name: 'Image de base', tag: 'base image', text: 'L’enregistrement réalisé avant la décroissance de PEEP est intégré à l’analyse ; le rapport présente les courbes avec et sans cette image.' },
+  { year: 'Visite', name: 'Rapport et classeurs', tag: 'pdf · xlsx · csv', text: 'Rapport PDF de la visite, classeur par palier et classeur de visite, avec les paramètres de reconstruction.' },
+  { year: 'Interface', name: 'Français et anglais', tag: 'FR · EN', text: 'L’interface est en anglais par défaut et passe en français en un clic.' },
 ];
 
 // Method charts (functions, so the translations apply).
