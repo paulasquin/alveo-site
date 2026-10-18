@@ -68,7 +68,7 @@ export const peepAt = (x) => {
  * the feet, as the monitor shows it, the patient's right lung is on the screen's left.
  * Each point carries its depth (0 ventral, 1 dorsal) and a ventilation weight.
  */
-export function createLung({ count = 26000, size = 3.2 } = {}) {
+export function createLung({ count = 26000, size = 3.8 } = {}) {
   count = Math.round(count * Math.max(0.35, QUALITY.particles));
   const pos = new Float32Array(count * 3), aux = new Float32Array(count * 3);
   // Viewed from the feet (camera on -Z), screen right is -X: the patient's right lung sits at +X.
@@ -131,7 +131,7 @@ export function createLung({ count = 26000, size = 3.2 } = {}) {
         c = mix(c, uHi, glow * glow * 0.6);
         float keep = mix(1.0, 0.12 + 0.88 * vSlice, uSlice);
         c = mix(c, uHi, vSlice * uSlice * 0.5);
-        gl_FragColor = vec4(c * (0.55 + 0.9 * glow), a * uOpacity * keep * 0.55);
+        gl_FragColor = vec4(c * (0.7 + 0.9 * glow), a * uOpacity * keep * 0.8);
       }`,
     transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
   });
